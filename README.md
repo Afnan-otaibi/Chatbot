@@ -1,8 +1,8 @@
 # Chatbot
-This repository displays a web page combination of controlling the movement of the arm and the base of a robot.
+This repository displays a web page contain a chatbot from IBM watson assistant.
 
 Description
-I merage task 1 page with this task (make them in one page), this website is to help to control the robot arm and base movement. First, In the index.php file, I wrote codes for sliders and buttons. In the conn.php file, I succeeded in making the connection between the website and the database. In the sl.js file, I wrote javascript codes to assign the sliders to their values. In the style.css file, there are to make the website appearance more acceptable. I used XAMPP as servere. Finally, in robot-arm+direction.sql are codes of the database, there is two tables one with with 4 columns contain id,motor_name , degree of the slider, and the state :ON/Off and the onther table contain directions.
+I added a chatbot in my website to help users if they have problems.
 
 Files
 README.md
@@ -15,4 +15,5 @@ robot-arm+direction.sql
 Developer
 I'm a Computer Science student at PSAU in KSA. [email: afnan.sa.ot@gmail.com]
 
-link:  https://afnan-otaibi.github.io/Chatbot/
+# link:
+to visit the website and test the chatbot : https://afnan-otaibi.github.io/Chatbot/
