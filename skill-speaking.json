@@ -1,0 +1,312 @@
+{
+  "intents": [
+    {
+      "intent": "farewell",
+      "examples": [
+        {
+          "text": "good bye"
+        },
+        {
+          "text": "I love you"
+        },
+        {
+          "text": "Thank you"
+        },
+        {
+          "text": "باي"
+        },
+        {
+          "text": "شكرا"
+        },
+        {
+          "text": "شكرا لك"
+        },
+        {
+          "text": "شكرا لكم"
+        },
+        {
+          "text": "مع السلامه"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greeting",
+      "examples": [
+        {
+          "text": "Good Afternoon"
+        },
+        {
+          "text": "Good evening"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "السلام عليكم"
+        },
+        {
+          "text": "اهلا"
+        },
+        {
+          "text": "سلام"
+        },
+        {
+          "text": "صباح الخير"
+        },
+        {
+          "text": "مرحبا"
+        },
+        {
+          "text": "مساء الخير"
+        },
+        {
+          "text": "هاي"
+        },
+        {
+          "text": "هيلو"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Help",
+      "examples": [
+        {
+          "text": "an error heppen"
+        },
+        {
+          "text": "help"
+        },
+        {
+          "text": "help me"
+        },
+        {
+          "text": "help me!"
+        },
+        {
+          "text": "I am looking for"
+        },
+        {
+          "text": "I need help in"
+        },
+        {
+          "text": "there is a button does not work"
+        },
+        {
+          "text": "there is a button doesn't work"
+        },
+        {
+          "text": "There is a problem"
+        },
+        {
+          "text": "أحتاج مساعدة في"
+        },
+        {
+          "text": "تظهر رسالة خطأ"
+        },
+        {
+          "text": "ساعدوني"
+        },
+        {
+          "text": "عندي مشكلة"
+        },
+        {
+          "text": "في مشكلة"
+        },
+        {
+          "text": "في مشكله"
+        },
+        {
+          "text": "هنالك زر لا يعمل"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_9_1625556454978",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "greetings",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello , How can I help you?"
+              },
+              {
+                "text": "Hi, How can I help you?"
+              },
+              {
+                "text": "وعليكم السلام ، كيف أقدر أخدمك"
+              },
+              {
+                "text": "ي هلا ، آمر"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Greeting",
+      "dialog_node": "node_4_1625556032195",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "help",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "قم بتحديث الصفحة"
+              },
+              {
+                "text": "reload the page"
+              },
+              {
+                "text": "call this phone No:05#######"
+              },
+              {
+                "text": "اتصل على هذا الرقم: 05######"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#Help",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_9_1625556333084",
+      "previous_sibling": "node_4_1625556032195"
+    },
+    {
+      "type": "standard",
+      "title": "bye",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good bye"
+              },
+              {
+                "text": "we happy to help anytime"
+              },
+              {
+                "text": "thanks for trusting us"
+              },
+              {
+                "text": "شكرا لإستخدامك لنا"
+              },
+              {
+                "text": "نأمل أننا كنا قادرين على المساعدة"
+              },
+              {
+                "text": "مع السلامة"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#farewell",
+      "dialog_node": "node_9_1625556454978",
+      "previous_sibling": "node_9_1625556333084"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "speaking",
+  "language": "en",
+  "description": ""
+}
